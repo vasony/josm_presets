@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presets xmlns="http://josm.openstreetmap.de/tagging-preset-1.0" author="vasony" version="1.20">
+<!--
+    Format description: https://josm.openstreetmap.de/wiki/TaggingPresets
+-->
+    <chunk id="color">
+        <combo key="colour" text="Color (HTML name or hexadecimal code)" values="black,blue,brown,gray,green,orange,purple,red,white,yellow,darkgray,lime" values_context="color" />
+    </chunk>
+
+    <chunk id="surface">
+        <combo key="surface" text="Surface" values="unpaved,asphalt,concrete,concrete:plates,concrete:lanes,paving_stones,sett,unhewn_cobblestone,grass_paver,compacted,fine_gravel,gravel,pebblestone,ground,sand,grass,wood,metal" />
+    </chunk>
+
+    <chunk id="keypad_mapper">
+            <optional text="Remove these Keypad Mapper values">
+                <text key="name"             text="Name" />
+                <text key="addr:housenumber" text="Housenumber" />
+                <text key="survey:date"      text="Survey date" />
+            </optional>
+    </chunk>
+
+
+    <chunk id="fire_hydrant_type">
+            <combo key="fire_hydrant:type" text="Shape" values_searchable="true" values_context="pipeline" >
+                <list_entry value="pillar" short_description="A pillar type hydrant." />
+                <list_entry value="underground" short_description="A fire hydrant simple outlet located underground." />
+                <list_entry value="wall" short_description="A wall-mounted fire hydrant." />
+                <list_entry value="pipe" short_description="A simple capped pipe, without the usual hydrant shape." />
+            </combo>
+    </chunk>
+
+
+    <chunk id="fire_hydrant_diameter">
+            <combo key="fire_hydrant:diameter" text="Diameter (mm)" values="50,75,80,100,125,150,200,300,400,500,600,800,1000" />
+    </chunk>
+
+    <chunk id="fire_hydrant_position">
+            <combo key="fire_hydrant:position" text="Hydrant Position" values_context="hydrant position" >
+                <list_entry value="lane" short_description="on the side of a road lane" />
+                <list_entry value="parking_lot" short_description="in a parking lot" />
+                 <list_entry value="sidewalk" short_description="on a sidewalk" />
+                 <list_entry value="green" short_description="in a grassy area" />
+                 <list_entry value="roadside" short_description="side of the road" />
+            </combo>
+    </chunk>
+
+    <group name="vasony" icon="presets/emergency/ambulance_station.svg">
+        <item name="Fire Hydrant" icon="presets/service/fire_hydrant.svg" type="node" preset_name_label="true">
+            <key key="emergency" value="fire_hydrant" />
+            <reference ref="fire_hydrant_type" />
+            <reference ref="fire_hydrant_diameter" />
+            <text key="ref" text="Reference" />
+            <reference ref="fire_hydrant_position" />
+
+            <combo key="shape" text="Shape of underground hydrant cover" values="rectangle,oval,circle,square" />
+            <combo key="fire_hydrant:signage" text="Plate of hydrant" values="missing,incomplete,invalid" />
+            <space />
+            <combo key="manufacturer" text="Manufacturer" values="Mohácsi Vasöntöde Kft.,Hawle Kft.,CW-Water Kft.,Bohamet-Armatura Sp. z o.o.,VAG,Jafar" />
+            <combo key="model" text="Model" values="h8,expo,VAG Nova 284;8855 RD1250" />
+            <text key="manufacture_date" text="Manufacture Date"  />
+            <space />
+            <reference ref="keypad_mapper" />
+            <optional>
+                <reference ref="color" />
+                <combo key="bonnet:colour" text="Color of the top section (bonnet) (HTML name or hexadecimal code)" values="black,blue,brown,gray,green,orange,purple,red,silver,white,yellow,#CD853F" values_context="color" />
+                <combo key="cap:colour" text="Color of the caps (HTML name or hexadecimal code)" values="black,blue,brown,gray,green,orange,purple,red,silver,white,yellow,#CD853F" values_context="color" />
+            </optional>
+            <space />
+            <text key="fixme" text="Fixme" />
+        </item> <!-- Fire Hydrant -->
+
+        <item name="Fire hydrant - Bohamet" icon="presets/service/fire_hydrant.svg" type="node" preset_name_label="true">
+            <key key="emergency" value="fire_hydrant" match="keyvalue" />
+            <key key="fire_hydrant:type" value="pillar" match="keyvalue" />
+            <key key="manufacturer" value="Bohamet-Armatura Sp. z o.o." match="keyvalue!" />
+            <key key="manufacturer:wikidata" value="Q124636220" match="none" />
+            <combo key="model" text="Model" values="DN80/1000 L1900 2B FIX PN10" />
+            <text key="ref" text="Reference" />
+            <reference ref="fire_hydrant_diameter" />
+            <reference ref="fire_hydrant_position" />
+            <text key="manufacture_date" text="Manufacture date" />
+            <space />
+            <reference ref="keypad_mapper" />
+        </item>
+
+        <item name="Fire hydrant - Jafar" icon="presets/service/fire_hydrant.svg" type="node" preset_name_label="true">
+            <key key="emergency" value="fire_hydrant" match="keyvalue" />
+            <key key="fire_hydrant:type" value="pillar" match="keyvalue" />
+            <key key="manufacturer" value="Jafar S.A." match="keyvalue!" />
+            <combo key="model" text="Model" values="8855 RD1250;8855 RD1500" />
+            <text key="ref" text="Reference" />
+            <reference ref="fire_hydrant_diameter" />
+            <reference ref="fire_hydrant_position" />
+            <text key="manufacture_date" text="Manufacture date" />
+            <space />
+            <reference ref="keypad_mapper" />
+        </item>
+
+
+        <item name="Fire hydrant - Mohácsi" icon="presets/service/fire_hydrant.svg" type="node" preset_name_label="true">
+            <key key="emergency" value="fire_hydrant" match="keyvalue" />
+            <key key="fire_hydrant:type" value="pillar" match="keyvalue" />
+            <key key="manufacturer" value="Mohácsi Vasöntöde Kft." match="keyvalue!" />
+            <key key="manufacturer:wikidata" value="Q123690248" match="none" />
+            <combo key="model" text="Model" values="füles,IPA" />
+            <reference ref="fire_hydrant_diameter" />
+            <reference ref="fire_hydrant_position" />
+            <space />
+            <reference ref="keypad_mapper" />
+        </item>
+        
+        <item name="Fire hydrant - Hawle" icon="presets/service/fire_hydrant.svg" type="node" preset_name_label="true">
+            <key key="emergency" value="fire_hydrant" match="keyvalue" />
+            <key key="fire_hydrant:type" value="pillar" match="keyvalue" />
+            <key key="manufacturer" value="Hawle Kft." match="keyvalue!" />
+            <key key="manufacturer:wikidata" value="Q124537996" match="none" />
+            <text key="ref" text="Reference" />
+            <combo key="model" text="Model" values="h8,expo" />
+            <reference ref="fire_hydrant_diameter" />
+            <reference ref="fire_hydrant_position" />
+            <space />
+            <reference ref="keypad_mapper" />
+        </item>
+
+        <item name="Waste Basket" icon="presets/service/recycling/waste_basket.svg" type="node" preset_name_label="true">
+            <link wiki="Tag:amenity=waste_basket" />
+            <key key="amenity" value="waste_basket" />
+            <combo key="waste" text="Waste" values="trash,dog_excrement" />
+            <combo key="material" text="Material" values="concrete,metal,plastic,wood" />
+            <reference ref="color" />
+            <text key="ref" text="Reference" />
+            <check key="noref" text="Has no reference" disable_off="true" />
+            <combo key="manufacturer" text="Manufacturer" values_sort="false">
+                <list_entry value="Városszépítő Kft." short_description="Konstruktív, Jászberényi stb.." />
+                <list_entry value="mmcité" short_description="Cylindre, Diagonal stb." />
+                <list_entry value="Alma-Rend Kft." short_description="R típus" />
+                <list_entry value="Aba-Szer Fémbútor Kft." short_description="MC Mátra" />
+                <list_entry value="Benito" short_description="Agro Plusz" />
+                <list_entry value="De Bonum Kft." short_description="urbM" />
+                <list_entry value="Glasdon" short_description="Glasdon Jubilee" />
+                <list_entry value="Holzhof S.r.l." short_description="Edolo, Milano" />
+            </combo>
+
+            <combo key="model" text="Model" values_sort="false">
+                <list_entry value="DIN 30713" short_description="FKF zöld műanyag kuka" />
+                <list_entry value="Ceglédi" short_description="Kosaras, többféle gyártó"/>
+                <list_entry value="Konstruktív kerek" short_description="VSZ. Szürke nyitott henger, földön álló." />
+                <list_entry value="MC Márta" short_description="Abaszer. Ovális a játszóterek bejáratánál. Szürke 2 fekete oszlop között, melynek gömb van a tetején" />
+                <list_entry value="R" short_description="Alma Rend. Zöld henger, alul + felül 1 csíkban plusz jelekkel lyuggatott" />
+                <list_entry value="R kutya" short_description="Alma Rend. Zöld henger, teli, gombos oszlop" />
+                <list_entry value="Argo Plus" short_description="Benito. Szürke, lyukacsos, háromszögletű." />
+                <list_entry value="BCN" short_description="Benito. Kerek tömzsi (ritka)" />
+                <list_entry value="DogBox" short_description="Kék kutyapiszok gyűjtő" />
+                <!-- mmcité -->
+                <list_entry value="Crystal 211" short_description="MM. Téglalap, zárt, kerek bedobó nyílással" />
+                <list_entry value="Crystal 311" short_description="MM. Téglalap, zárt, kerek bedobó nyílással. 3 részes szelektív" />
+                <list_entry value="Cylindre 150" short_description="MM. Fekete kerek, hurkás" />
+                <list_entry value="Cylindre 250" short_description="MM. Kis lyukacsos" />
+                <list_entry value="Diagonal DG115" short_description="MM. Kerek, függőleges fa csíkokkal, szürke tetővel" />
+                <list_entry value="Diagonal DG165" short_description="MM. Négyzet, függőleges fa csíkokkal, szürke tetővel" />
+                <list_entry value="Diagonal DG310" short_description="MM. Kerek, 9 db viszíntes bevágással, tető nélkül" />
+                <list_entry value="Diagonal DG315" short_description="MM. Kerek, 9 db viszíntes bevágással, tetővel" />
+                <list_entry value="Diagonal DG365" short_description="MM. Négyzet, 9 db viszíntes bevágással, tetővel" />
+                <list_entry value="Diagonal DG415" short_description="MM. Kerek, lyukacsos, tetővel" />
+                <list_entry value="Lena 115" short_description="MM. Ovális, függőleges fa csíkokkal, fém szürke tető (Etele park)" />
+                <list_entry value="Lena 165" short_description="MM. Ovális, lyukacsos, fém szürke tető (Szombathelyi tér)" />
+                <list_entry value="Minium MIU415" short_description="MM. Ovális, függőleges fa csíkokkal, tető (Városliget)" />
+                <list_entry value="Nanuk 110" short_description="MM. Kerek, fa függőleges téglalapokkal tagolt" />
+                <list_entry value="Nanuk 165" short_description="MM. Szögletes, fa függőleges téglalapokkal tagolt, tetővel" />
+                <list_entry value="Nanuk 365" short_description="MM. Szögletes, fémlemezekkel burkolt, tetővel (Eperke játszótér)" />
+                <list_entry value="Prax 115" short_description="MM. Téglalap alapú, kicsi, 6 függőleges fabetét, íves tetőlemez (Kosztolányi)" />
+                <list_entry value="Prax 345" short_description="MM. Téglalap alapú, nagy, lyuggatott fém előlap, íves tetőlemez (Labirintus játszótér)" />
+                <list_entry value="UrbM Corvin" short_description="UrbM. Téglalap alapú, előlről nyitott szögletes tetővel" />
+                <!-- VSZ -->
+                <list_entry value="Bácskai" short_description="VSZ. Kerek, oszlopos, fedeles/nyitott kutyapiszok." />
+                <list_entry value="Jászberényi" short_description="VSZ. Zöld kerek, nyitott, oszlopos, 3 sorban kör alakú lyukakkal. Gömb a rúd tetején" />
+                <list_entry value="Konstruktív szögletes" short_description="VSZ. Szürke, nyitott, négyzet alapú, földön álló." />
+                <list_entry value="Ovális" short_description="VSZ. Ovális. Kívül fekete, belül szürke. Ovális perforáció, nincsenek gömbök, sima íves tető." />
+                <list_entry value="Konstruktív kutya" short_description="VSZ. Szürke földön álló henger, spec. nyílással" />
+                <list_entry value="Simplex kutya" short_description="VSZ. Fekete, oszlopos henger, spec nyílással" />
+                <list_entry value="Tiszántúli" short_description="VSZ. Mint a Jászberényi, de fordított U alakú oszlopon." />
+	                <list_entry value="Urban" short_description="VSZ. Szögletes, vas keret 5 db függőleges léc betéttel." />
+                <list_entry value="Góliát" short_description="VSZ. Mint a Jászberényi csak sima tetejű rúd, nagyobb." />
+                <!-- VSZ -->
+                <list_entry value="Glasdon Jubilee" short_description="Nagy fekete műanyag konténer" />
+                <list_entry value="Edolo" short_description="Holzhof. Fa kerek zsáktartó lécekből, fém kuka tetővel" />
+                <list_entry value="Milano" short_description="Holzhof. Fa kerek lécekből, fém oszlopos." />
+            </combo>
+
+            <text key="fixme" text="Fixme" />
+            <text key="check_date" text="Check date" />
+            <reference ref="keypad_mapper" />
+        </item> <!-- Waste Basket/ -->
+
+        <item name="Highway" icon="presets/transport/way/way_residential.svg" type="way" preset_name_label="true">
+            <combo key="highway"        text="Highway" values="primary,secondary,tertiary,residential,living_street"  values_context="sidewalk" match="key"/>
+            <space />
+            <reference ref="surface" />
+            <combo key="sidewalk"       text="Sidewalk" values="both,left,right,no,separate" values_context="sidewalk" match="key"/>
+            <check key="lit" text="Lit" />
+            <space />
+            <text key="maxspeed" text="Max. speed (km/h)" />
+            <combo key="source:maxspeed" text="Maxspeed source" values="HU:urban,HU:zone:30,sign" />
+            <optional text="Sidewalk attributes">
+              <combo key="sidewalk:both:surface" text="Sidefalk surface" values="unpaved,asphalt,concrete,paving_stones,sett,grass_paver" values_context="surface" />
+              <combo key="sidewalk:left"  text="Left sidewalk" values="yes,no,separate" values_context="sidewalk" />
+              <combo key="sidewalk:left:surface"  text="Left sidewalk surface" values="unpaved,asphalt,concrete,paving_stones,sett,grass_paver" values_context="surface" />
+              <combo key="sidewalk:right" text="Right sidewalk" values="yes,no,separate" values_context="sidewalk" />
+              <combo key="sidewalk:right:surface" text="Right sidefalk surface" values="unpaved,asphalt,concrete,paving_stones,sett,grass_paver" values_context="surface" />
+              <space />
+              <combo key="priority" text="Priority" values="forward,backward" />
+            </optional>
+        </item> <!-- Sidewalk -->
+
+        <item name="Power Substation Minor Distribution" icon="presets/power/substation.svg" type="node,closedway" preset_name_label="true">
+            <key key="man_made"   value="street_cabinet" />
+            <key key="utility" value="power" />
+            <key key="power" value="substation" />
+            <key key="substation" value="minor_distribution" />
+            <text key="ref" text="Reference" />
+
+            <optional>
+                <text key="manufacturer" text="Manufacturer" />
+                <reference ref="color" />
+                 <text key="height" text="Height (meters)" length="7" />
+            </optional>
+            <reference ref="keypad_mapper" />
+
+        </item> <!-- Power Substation -->
+
+        <item name="Address" icon="presets/misc/housenumber.svg" type="node,way,closedway,multipolygon,relation" preset_name_label="true">
+            <text key="addr:housenumber" text="House number" match="key" auto_increment="-2,-1,+1,+2" />
+            <text key="addr:street" text="Street name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+            <text key="addr:city" text="City name" use_last_as_default="force" match="key" />
+            <text key="addr:postcode" text="Post code" use_last_as_default="force" match="key" alternative_autocomplete_keys="postal_code"/>
+            <optional>
+                <text key="addr:conscriptionnumber" text="Hrsz." match="key" />
+                <text key="addr:suburb" text="Suburb" use_last_as_default="force" match="key" />
+                <text key="addr:place" text="Place name" use_last_as_default="force" match="key" alternative_autocomplete_keys="name" />
+                <text key="addr:unit" text="Unit/Suite" match="key" />
+                <text key="addr:floor" text="Floor" match="key" />
+                <text key="addr:door" text="Door" match="key" />
+            </optional>
+
+            <optional>
+                <text key="addr:full" text="Full address" match="key" />
+            </optional>
+
+            <optional>
+              <text key="name" text="Name"/>
+              <combo key="building" text="Building"                       values="yes,residential,apartments,ger,house,hotel,hut,bungalow,dormitory,terrace,detached,farm,stilt_house,semidetached_house" values_context="building" values_searchable="true" />
+              <combo key="demolished:building" text="Demolished Building" values="yes,residential,apartments,ger,house,hotel,hut,bungalow,dormitory,terrace,detached,farm,stilt_house,semidetached_house" values_context="building" values_searchable="true" />
+            </optional>
+
+            <optional text="Remove these">
+                <text key="survey:date"      text="Survey date" />
+                <text key="addr:housename" text="House name" match="key" alternative_autocomplete_keys="name" />
+                <text key="addr:hamlet" text="Hamlet" match="key" />
+                <text key="addr:subdistrict" text="Subdistrict" use_last_as_default="force" match="key" />
+                <text key="addr:district" text="District" use_last_as_default="force" match="key" />
+                <text key="addr:province" text="Province" use_last_as_default="force" match="key" />
+            </optional>
+        </item> <!-- Address -->
+
+    </group>
+</presets>
