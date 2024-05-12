@@ -12,39 +12,39 @@
 
 
     <chunk id="brand_bp01">
-        <key key="brand"   value="Budavár parkolás" match="keyvalue" />
+        <key key="brand"   value="Budavár parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp02">
-        <key key="brand"   value="Budapest II. kerület parkolás" match="keyvalue" />
+        <key key="brand"   value="Budapest II. kerület parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp03">
-        <key key="brand"   value="Óbudai parkolás" match="keyvalue" />
+        <key key="brand"   value="Óbudai parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp05">
-        <key key="brand"   value="Belváros-Lipótváros parkolás" match="keyvalue" />
+        <key key="brand"   value="Belváros-Lipótváros parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp06">
-        <key key="brand"   value="Terézváros parkolás" match="keyvalue" />
+        <key key="brand"   value="Terézváros parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp07">
-        <key key="brand"   value="Erzsébet parkolás" match="keyvalue" />
+        <key key="brand"   value="Erzsébet parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp08">
-        <key key="brand"   value="Józsefváros parkolás" match="keyvalue" />
+        <key key="brand"   value="Józsefváros parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp09">
-        <key key="brand"   value="Ferencvárosi parkolás" match="keyvalue" />
+        <key key="brand"   value="Ferencvárosi parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp10">
-        <key key="brand"   value="Kőbánya parkolás" match="keyvalue" />
+        <key key="brand"   value="Kőbánya parkolás" match="keyvalue!" />
     </chunk>
 
     <chunk id="brand_bp11">
@@ -159,6 +159,37 @@
                 <key key="opening_hours"    value="24/7" match="none"/>
                 <key key="payment:coins"    value="yes" match="none"/>
                 <key key="payment:others"   value="no" match="none"/>
+                <key key="electricity"      value="solar" match="none"/>
+    </chunk>
+
+    <chunk id="model_psa1256_st">
+                <key key="language:de"   value="yes"   match="none" />
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none" />
+                <key key="manufacturer"  value="Automatentechnik Baumann GmbH" match="none"/>
+                <key key="manufacturer:wikidata" value="Q124790063" match="none" />
+                <key key="material"         value="stainless_steel" match="none"/>
+                <key key="model"            value="PSA 1256 ST" match="keyvalue!"/>
+                <key key="model:wikidata"   value="Q124790011" match="none"/>
+                <key key="opening_hours"    value="24/7" match="none"/>
+                <key key="payment:coins"    value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+                <key key="electricity"      value="solar" match="none"/>
+    </chunk>
+
+    <chunk id="model_sicuro">
+                <key key="language:de"   value="yes"   match="none" />
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none" />
+                <key key="manufacturer"          value="Siemens AG" match="none"/>
+                <key key="manufacturer:wikidata" value="Q81230" match="none"/>
+                <key key="material"         value="stainless_steel" match="none"/>
+                <key key="model"            value="Sicuro" match="keyvalue!"/>
+                <key key="model:wikidata"   value="Q124790149" match="none"/>
+                <key key="opening_hours"    value="24/7" match="none"/>
+                <key key="payment:coins"    value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+                <key key="electricity"      value="solar" match="none"/>
     </chunk>
 
     <chunk id="model_stelio">
@@ -196,6 +227,142 @@
         </item>
 
         <group name="Budapest" icon="presets/vehicle/parking/parking.svg" sort_values="false">
+
+            <item name="01 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp01" />
+                <reference ref="model_prisma5" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="01 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp01" />
+                <reference ref="model_psa1256" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="02 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp02" />
+                <reference ref="model_prisma5" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="02 - Siemens Sicuro" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp02" />
+                <reference ref="model_sicuro" />
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="03 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp13" />
+                <reference ref="model_psa1256" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="05 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp13" />
+                <reference ref="model_dg4" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="06 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp06" />
+                <reference ref="model_dg4" />
+                <reference ref="parking_refs" />
+                <text key="ref:serial_number" text="Serial number" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="06 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp06" />
+                <reference ref="model_prisma5" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="07 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp07" />
+                <reference ref="model_dg4" />
+                <reference ref="parking_refs" />
+                <text key="ref:serial_number" text="Serial number" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="07 - Parkeon Stelio" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp07" />
+                <reference ref="model_stelio" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="07 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp07" />
+                <reference ref="model_psa1256" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="08 - Siemens Sicuro" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp08" />
+                <reference ref="model_sicuro" />
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="09 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp09" />
+                <reference ref="model_dg4" />
+                <reference ref="parking_refs" />
+                <text key="ref:serial_number" text="Serial number" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
             <item name="11 - NortPark Solar" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <link wiki="Tag:amenity=vending_machine" />
                 <key key="amenity" value="vending_machine" match="none"/>
@@ -259,7 +426,6 @@
                 <key key="currency:HUF"     value="yes" match="none"/>
                 <key key="currency:EUR"     value="yes" match="none"/>
                 <key key="currency:others"  value="no" match="none"/>
-                <key key="electricity"      value="solar" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
