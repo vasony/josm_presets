@@ -78,14 +78,19 @@
         <combo key="note" text="Note" values="nincs kiírva az automata regisztrációs száma" />
     </chunk>
 
+    <chunk id="parking_refs">
+            <text key="ref" text="Parking Zone" />
+            <text key="ref:internal" text="Reference number" />
+            <text key="branch" text="Branch" />
+            <text key="branch:vending_reg" text="NAV Branch" />
+            <text key="ref:HU:vending_reg" text="NAV U" />
+    </chunk>
+
     <group name="Parking tickets" icon="presets/vehicle/parking/parking.svg" sort_values="false">
         <item name="AGeneral" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
             <key key="amenity" value="vending_machine" match="none" />
             <key key="vending" value="parking_tickets" match="keyvalue" />
-            <text key="ref" text="Parking Zone" />
-            <text key="ref:internal" text="Reference number" />
-            <text key="branch" text="Branch" />
-            <text key="ref:HU:vending_reg" text="NAV U" />
+            <reference ref="parking_refs" />
             <combo key="brand"   text="Brand"    values="Budavár parkolás,Budapest II. kerület parkolás,Óbudai parkolás,Belváros-Lipótváros parkolás,Terézváros parkolás,Erzsébet parkolás,Józsefváros parkolás,Ferencvárosi parkolás,Kőbánya parkolás,Újbuda parkolás,Hegyvidéki parkolás,Budapest XIII. kerület parkolás,Zuglói parkolás" match="keyvalue"/>
             <combo key="model"   text="Model" sort_values="false">
                 <list_entry value="Prisma 5"       short_description="Prisma 5" />
@@ -118,10 +123,7 @@
                 <key key="payment:coins"   value="yes" match="none"/>
                 <key key="payment:others"  value="no" match="none"/>
                 <key key="shape"           value="square_prism" match="none"/>
-                <text key="branch" text="Branch" />
-                <text key="ref" text="Parking Zone" />
-                <text key="ref:internal" text="Reference number" />
-                <text key="ref:HU:vending_reg" text="NAV U" />
+                <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
@@ -142,10 +144,7 @@
                 <key key="payment:coins"   value="yes" match="none"/>
                 <key key="payment:others"  value="no" match="none"/>
                 <key key="shape"   value="triangular_prism" match="none"/>
-                <text key="branch" text="Branch" />
-                <text key="ref" text="Parking Zone" />
-                <text key="ref:internal" text="Reference number" />
-                <text key="ref:HU:vending_reg" text="NAV U" />
+                <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
@@ -166,10 +165,7 @@
                 <key key="payment:coins"   value="yes" match="none"/>
                 <key key="payment:others"  value="no" match="none"/>
                 <key key="shape"           value="triangular_prism" match="none"/>
-                <text key="branch" text="Branch" />
-                <text key="ref" text="Parking Zone" />
-                <text key="ref:internal" text="Reference number" />
-                <text key="ref:HU:vending_reg" text="NAV U" />
+                <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
@@ -192,10 +188,7 @@
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <key key="payment:others"   value="no" match="none"/>
                 <check key="electricity"   value_on="solar" text="Solar" delete_if_empty="true" />
-                <text key="branch" text="Branch" />
-                <text key="ref" text="Parking Zone" />
-                <text key="ref:internal" text="Reference number" />
-                <text key="ref:HU:vending_reg" text="NAV U" />
+                <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
@@ -222,10 +215,7 @@
                 <key key="currency:EUR"     value="yes" match="none"/>
                 <key key="currency:others"  value="no" match="none"/>
                 <key key="electricity"      value="solar" match="none"/>
-                <text key="branch" text="Branch" />
-                <text key="ref" text="Parking Zone" />
-                <text key="ref:internal" text="Reference number" />
-                <text key="ref:HU:vending_reg" text="NAV U" />
+                <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
@@ -247,10 +237,7 @@
                 <key key="payment:coins"   value="yes" match="none"/>
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <key key="payment:others"   value="no" match="none"/>
-                <text key="branch" text="Branch" />
-                <text key="ref" text="Parking Zone" />
-                <text key="ref:internal" text="Reference number" />
-                <text key="ref:HU:vending_reg" text="NAV U" />
+                <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
