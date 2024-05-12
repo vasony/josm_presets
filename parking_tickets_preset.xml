@@ -86,6 +86,97 @@
             <text key="ref:HU:vending_reg" text="NAV U" />
     </chunk>
 
+    <chunk id="model_dg4">
+                <key key="language:de"   value="yes"   match="none" />
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:fr"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none" />
+                <key key="manufacturer"          value="Schlumberger Ltd." match="none"/>
+                <key key="manufacturer:wikidata" value="Q1425316" match="none" />
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="DG4"        match="keyvalue!"/>
+                <key key="model:wikidata"  value="Q124789946" match="none"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+    </chunk>
+
+    <chunk id="model_nortpark_solar">
+                <key key="electricity"   value="solar" match="none"/>
+                <key key="language:de"   value="yes"   match="none"/>
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none"/>
+                <key key="manufacturer"          value="Nort Kft." match="none"/>
+                <key key="manufacturer:wikidata" value="Q125000308" match="none"/>
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="NortPark Solar" match="keyvalue!"/>
+                <key key="model:wikidata"  value="Q124989565" match="none"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"  value="no" match="none"/>
+                <key key="shape"           value="square_prism" match="none"/>
+    </chunk>
+
+    <chunk id="model_prisma5">
+                <key key="language:de" value="yes"   match="none"/>
+                <key key="language:en" value="yes"   match="none" />
+                <key key="language:hu" value="yes"   match="none"/>
+                <key key="manufacturer"          value="Siemens AG" match="none"/>
+                <key key="manufacturer:wikidata" value="Q81230" match="none"/>
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model:wikidata"  value="Q124790270" match="none"/>
+                <key key="model"           value="Prisma 5" match="keyvalue!"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"  value="no" match="none"/>
+                <key key="shape"   value="triangular_prism" match="none"/>
+    </chunk>
+
+    <chunk id="model_prisma6">
+                <key key="language:de" value="yes"   match="none"/>
+                <key key="language:en" value="yes"   match="none" />
+                <key key="language:hu" value="yes"   match="none"/>
+                <key key="manufacturer"          value="Siemens AG" match="none"/>
+                <key key="manufacturer:wikidata" value="Q81230" match="none"/>
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="Prisma 6" match="keyvalue!"/>
+                <key key="model:wikidata"  value="Q124790318" match="none"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"  value="no" match="none"/>
+                <key key="shape"   value="triangular_prism" match="none"/>
+    </chunk>
+
+    <chunk id="model_psa1256">
+                <key key="language:de"   value="yes"   match="none" />
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none" />
+                <key key="manufacturer"  value="Automatentechnik Baumann GmbH" match="none"/>
+                <key key="manufacturer:wikidata" value="Q124790063" match="none" />
+                <key key="material"         value="stainless_steel" match="none"/>
+                <key key="model"            value="PSA 1256" match="keyvalue!"/>
+                <key key="model:wikidata"   value="Q124790011" match="none"/>
+                <key key="opening_hours"    value="24/7" match="none"/>
+                <key key="payment:coins"    value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+    </chunk>
+
+    <chunk id="model_stelio">
+                <key key="language:de"    value="yes"   match="none" />
+                <key key="language:en"    value="yes"   match="none" />
+                <key key="language:fr"    value="yes"   match="none" />
+                <key key="language:hu"    value="yes"   match="none" />
+                <key key="manufacturer"   value="Parkeon" match="none"/>
+                <key key="manufacturer:wikidata"   value="Q81230" match="none" />
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="Stelio"     match="keyvalue!"/>
+                <key key="model:wikidata"  value="Q124791160" match="none"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+                <check key="electricity"   value_on="solar" text="Solar" delete_if_empty="true" />
+    </chunk>
+
     <group name="Parking tickets" icon="presets/vehicle/parking/parking.svg" sort_values="false">
         <item name="AGeneral" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
             <key key="amenity" value="vending_machine" match="none" />
@@ -105,66 +196,42 @@
         </item>
 
         <group name="Budapest" icon="presets/vehicle/parking/parking.svg" sort_values="false">
-            <item name="11 - Nort" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+            <item name="11 - NortPark Solar" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <link wiki="Tag:amenity=vending_machine" />
                 <key key="amenity" value="vending_machine" match="none"/>
                 <key key="vending" value="parking_tickets" match="none"/>
                 <reference ref="brand_bp11" />
-                <key key="electricity"   value="solar" match="none"/>
-                <key key="language:de"   value="yes"   match="none"/>
-                <key key="language:en"   value="yes"   match="none" />
-                <key key="language:hu"   value="yes"   match="none"/>
-                <key key="manufacturer"          value="Nort Kft." match="none"/>
-                <key key="manufacturer:wikidata" value="Q125000308" match="none"/>
-                <key key="material"        value="stainless_steel" match="none"/>
-                <key key="model"           value="NortPark Solar" match="keyvalue!"/>
-                <key key="model:wikidata"  value="Q124989565" match="none"/>
-                <key key="opening_hours"   value="24/7" match="none"/>
-                <key key="payment:coins"   value="yes" match="none"/>
-                <key key="payment:others"  value="no" match="none"/>
-                <key key="shape"           value="square_prism" match="none"/>
+                <reference ref="model_nortpark_solar" />
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
 
-            <item name="11 - Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+            <item name="11 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp11" />
-                <key key="language:de" value="yes"   match="none"/>
-                <key key="language:en" value="yes"   match="none" />
-                <key key="language:hu" value="yes"   match="none"/>
-                <key key="manufacturer"          value="Siemens AG" match="none"/>
-                <key key="manufacturer:wikidata" value="Q81230" match="none"/>
-                <key key="material"        value="stainless_steel" match="none"/>
-                <key key="model:wikidata"  value="Q124790270" match="none"/>
-                <key key="model"           value="Prisma 5" match="keyvalue!"/>
-                <key key="opening_hours"   value="24/7" match="none"/>
-                <key key="payment:coins"   value="yes" match="none"/>
-                <key key="payment:others"  value="no" match="none"/>
-                <key key="shape"   value="triangular_prism" match="none"/>
+                <reference ref="model_prisma5" />
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
 
-            <item name="12 - Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+            <item name="12 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp12" />
-                <key key="language:de"   value="yes"   match="none" />
-                <key key="language:en"   value="yes"   match="none" />
-                <key key="language:hu"   value="yes"   match="none" />
-                <key key="manufacturer"          value="Siemens AG" match="none"/>
-                <key key="manufacturer:wikidata" value="Q81230" match="none"/>
-                <key key="material"        value="stainless_steel" match="none"/>
-                <key key="model:wikidata"  value="Q124790270" match="none"/>
-                <key key="model"           value="Prisma 5" match="keyvalue!"/>
-                <key key="opening_hours"   value="24/7" match="none"/>
-                <key key="payment:coins"   value="yes" match="none"/>
-                <key key="payment:others"  value="no" match="none"/>
-                <key key="shape"           value="triangular_prism" match="none"/>
+                <reference ref="model_prisma5" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="12 - Siemens Prisma 6" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp12" />
+                <reference ref="model_prisma6" />
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
@@ -174,20 +241,8 @@
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp13" />
-                <key key="language:de"    value="yes"   match="none" />
-                <key key="language:en"    value="yes"   match="none" />
-                <key key="language:fr"    value="yes"   match="none" />
-                <key key="language:hu"    value="yes"   match="none" />
-                <key key="manufacturer"   value="Parkeon" match="none"/>
-                <key key="manufacturer:wikidata"   value="Q81230" match="none" />
-                <key key="material"        value="stainless_steel" match="none"/>
-                <key key="model"           value="Stelio"     match="keyvalue!"/>
-                <key key="model:wikidata"  value="Q124791160" match="none"/>
-                <key key="opening_hours"   value="24/7" match="none"/>
-                <key key="payment:coins"   value="yes" match="none"/>
+                <reference ref="model_stelio" />
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
-                <key key="payment:others"   value="no" match="none"/>
-                <check key="electricity"   value_on="solar" text="Solar" delete_if_empty="true" />
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
@@ -197,20 +252,10 @@
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp13" />
-                <key key="language:de"   value="yes"   match="none" />
-                <key key="language:en"   value="yes"   match="none" />
-                <key key="language:hu"   value="yes"   match="none" />
+                <reference ref="model_psa1256" />
                 <key key="language:fr"   value="yes"   match="none" />
                 <key key="language:it"   value="yes"   match="none" />
                 <key key="language:es"   value="yes"   match="none" />
-                <key key="manufacturer"  value="Automatentechnik Baumann GmbH" match="none"/>
-                <key key="manufacturer:wikidata" value="Q124790063" match="none" />
-                <key key="material"         value="stainless_steel" match="none"/>
-                <key key="model"            value="PSA 1256" match="keyvalue!"/>
-                <key key="model:wikidata"   value="Q124790011" match="none"/>
-                <key key="opening_hours"    value="24/7" match="none"/>
-                <key key="payment:coins"    value="yes" match="none"/>
-                <key key="payment:others"   value="no" match="none"/>
                 <key key="currency:HUF"     value="yes" match="none"/>
                 <key key="currency:EUR"     value="yes" match="none"/>
                 <key key="currency:others"  value="no" match="none"/>
@@ -224,19 +269,8 @@
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp13" />
-                <key key="language:de"   value="yes"   match="none" />
-                <key key="language:en"   value="yes"   match="none" />
-                <key key="language:fr"   value="yes"   match="none" />
-                <key key="language:hu"   value="yes"   match="none" />
-                <key key="manufacturer"          value="Schlumberger Ltd." match="none"/>
-                <key key="manufacturer:wikidata" value="Q1425316" match="none" />
-                <key key="material"        value="stainless_steel" match="none"/>
-                <key key="model"           value="DG4"        match="keyvalue!"/>
-                <key key="model:wikidata"  value="Q124789946" match="none"/>
-                <key key="opening_hours"   value="24/7" match="none"/>
-                <key key="payment:coins"   value="yes" match="none"/>
+                <reference ref="model_dg4" />
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
-                <key key="payment:others"   value="no" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
