@@ -10,6 +10,11 @@
         </optional>
     </chunk>
 
+    <chunk id="payment_card">
+        <check key="payment:debit_cards"  text="Debit cards"         match="none" />
+        <check key="payment:credit_cards" text="Credit cards"        match="none" />
+        <check key="payment:contactless"  text="Contactless payment" match="none" />
+    </chunk>
 
     <chunk id="brand_bp01">
         <key key="brand"   value="Budavár parkolás" match="keyvalue!" />
@@ -272,7 +277,7 @@
             <item name="03 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
-                <reference ref="brand_bp13" />
+                <reference ref="brand_bp03" />
                 <reference ref="model_psa1256" />
                 <reference ref="parking_refs" />
                 <space />
@@ -282,7 +287,7 @@
             <item name="05 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
-                <reference ref="brand_bp13" />
+                <reference ref="brand_bp05" />
                 <reference ref="model_dg4" />
                 <reference ref="parking_refs" />
                 <space />
@@ -370,6 +375,8 @@
                 <reference ref="brand_bp11" />
                 <reference ref="model_nortpark_solar" />
                 <reference ref="parking_refs" />
+                <space />
+                <reference ref="payment_card" />
                 <space />
                 <reference ref="noref_vending" />
             </item>
