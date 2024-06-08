@@ -56,6 +56,9 @@
 
     <chunk id="brand_bp09">
         <key key="brand"   value="Ferencvárosi parkolás" match="keyvalue!" />
+        <key key="contact:email"   value="ugyfelszolgalat@fevix.hu"         match="none" />
+        <key key="contact:phone"   value="+36 70 796 7800"                  match="none" />
+        <key key="contact:website" value="https://ferencvarosiparkolas.hu/" match="none" />
     </chunk>
 
     <chunk id="brand_bp10">
@@ -88,10 +91,23 @@
         <key key="brand"   value="Zuglói parkolás" match="keyvalue!" />
     </chunk>
 
-    <chunk id="noref_vending">
+    <chunk id="brand_godollo">
+        <key key="brand"           value="Gödöllő parkolás"                  match="keyvalue!" />
+        <key key="contact:email"   value="ugyfelszolgalat@vuszikft.hu"       match="none" />
+        <key key="contact:phone"   value="+36 28 410 295"                    match="none" />
+        <key key="contact:website" value="https://vuszikft.hu/"              match="none" />
+        <key key="contact:addr"    value="2100 Gödöllő, Dózsa György út 12." match="none" />
+        <key key="operator"        value="VÜSZI Nonprofit Kft."              match="none"/>
+    </chunk>
+
+
+    <chunk id="other">
         <check key="noref:HU:vending_reg" text="No NAV U" disable_off="true" />
         <combo key="note" text="Note" values="nincs kiírva az automata regisztrációs száma" />
         <text  key="fixme" text="Fixme" />
+        <text  key="check_date" text="Check date" />
+        <space />
+        <reference ref="keypad_mapper" />
     </chunk>
 
     <chunk id="parking_refs">
@@ -215,7 +231,7 @@
                 <key key="language:fr"    value="yes"   match="none" />
                 <key key="language:hu"    value="yes"   match="none" />
                 <key key="manufacturer"   value="Parkeon" match="none"/>
-                <key key="manufacturer:wikidata"   value="Q81230" match="none" />
+                <key key="manufacturer:wikidata"   value="Q3365450" match="none" />
                 <key key="material"        value="stainless_steel" match="none"/>
                 <key key="model"           value="Stelio"     match="keyvalue!"/>
                 <key key="model:wikidata"  value="Q124791160" match="none"/>
@@ -225,12 +241,28 @@
                 <check key="electricity"   value_on="solar" text="Solar" delete_if_empty="true" />
     </chunk>
 
+    <chunk id="model_strada_transfer">
+                <key key="language:de"    value="yes"   match="none" />
+                <key key="language:en"    value="yes"   match="none" />
+                <key key="language:fr"    value="yes"   match="none" />
+                <key key="language:hu"    value="yes"   match="none" />
+                <key key="manufacturer"   value="Parkeon" match="none"/>
+                <key key="manufacturer:wikidata"   value="Q3365450" match="none" />
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="Strada Transfer"     match="keyvalue!"/>
+                <key key="model:wikidata"  value="Q126417355" match="none"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+                <key key="electricity"      value="solar" mactch="none" />
+    </chunk>
+
     <group name="Parking tickets" icon="presets/vehicle/parking/parking.svg" sort_values="false">
         <item name="AGeneral" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
             <key key="amenity" value="vending_machine" match="none" />
             <key key="vending" value="parking_tickets" match="keyvalue" />
             <reference ref="parking_refs" />
-            <combo key="brand"   text="Brand"    values="Budavár parkolás,Budapest II. kerület parkolás,Óbudai parkolás,Belváros-Lipótváros parkolás,Terézváros parkolás,Erzsébet parkolás,Józsefváros parkolás,Ferencvárosi parkolás,Kőbánya parkolás,Újbuda parkolás,Hegyvidéki parkolás,Budapest XIII. kerület parkolás,Zuglói parkolás" match="keyvalue"/>
+            <combo key="brand"   text="Brand"    values="Budavár parkolás,Budapest II. kerület parkolás,Óbudai parkolás,Belváros-Lipótváros parkolás,Terézváros parkolás,Erzsébet parkolás,Józsefváros parkolás,Ferencvárosi parkolás,Kőbánya parkolás,Újbuda parkolás,Hegyvidéki parkolás,Budapest XIII. kerület parkolás,Zuglói parkolás,Gödőllő parkolás" match="keyvalue"/>
             <combo key="model"   text="Model" sort_values="false">
                 <list_entry value="Prisma 5"       short_description="Siemens Prisma 5" />
                 <list_entry value="Prisma 6"       short_description="Siemens Prisma 6" />
@@ -239,9 +271,10 @@
                 <list_entry value="PSA 1256"       short_description="Budapest XIII. - Piros - ATB PSA 1256" />
                 <list_entry value="Stelio"         short_description="Budapest XIII. - Szürke - Parkeon Stelio" />
                 <list_entry value="DG4"            short_description="Budapest Belváros - Régi kocka  - Schlumberger DG4 " />
+                <list_entry value="Strada Transfer" short_description="Gödöllő - Fekete - Parkeon Strada Transfer" />
             </combo>
             <space />
-            <reference ref="noref_vending" />
+            <reference ref="other" />
         </item>
 
         <group name="Budapest" icon="presets/vehicle/parking/parking.svg" sort_values="false">
@@ -253,7 +286,7 @@
                 <reference ref="model_prisma5" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="01 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -263,9 +296,10 @@
                 <reference ref="model_psa1256" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
+            <separator/>
             <item name="02 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
@@ -273,7 +307,7 @@
                 <reference ref="model_prisma5" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
 
@@ -284,7 +318,7 @@
                 <reference ref="model_prisma6" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="02 - Siemens Sicuro" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -295,9 +329,10 @@
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
+            <separator/>
             <item name="03 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
@@ -305,9 +340,10 @@
                 <reference ref="model_psa1256" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
+            <separator/>
             <item name="05 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
@@ -315,9 +351,10 @@
                 <reference ref="model_dg4" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
+            <separator/>
             <item name="06 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
@@ -326,7 +363,7 @@
                 <reference ref="parking_refs" />
                 <text key="ref:serial_number" text="Serial number" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="06 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -336,9 +373,10 @@
                 <reference ref="model_prisma5" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
+            <separator/>
             <item name="07 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
@@ -347,7 +385,7 @@
                 <reference ref="parking_refs" />
                 <text key="ref:serial_number" text="Serial number" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="07 - Parkeon Stelio" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -357,7 +395,7 @@
                 <reference ref="model_stelio" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="07 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -367,8 +405,9 @@
                 <reference ref="model_psa1256" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
+            <separator/>
 
             <item name="08 - Siemens Sicuro" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
@@ -378,7 +417,7 @@
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="08 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -389,7 +428,7 @@
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="09 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -400,9 +439,33 @@
                 <reference ref="parking_refs" />
                 <text key="ref:serial_number" text="Serial number" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
+            <item name="09 - Parkeon Stelio" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp09" />
+                <reference ref="model_stelio" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="other" />
+            </item>
+
+            <item name="09 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp09" />
+                <reference ref="model_psa1256" />
+                <key key="language:fr"   value="yes"   match="none" />
+                <key key="language:it"   value="yes"   match="none" />
+                <key key="language:es"   value="yes"   match="none" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="other" />
+            </item>
+
+            <separator/>
             <item name="11 - NortPark Solar" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <link wiki="Tag:amenity=vending_machine" />
                 <key key="amenity" value="vending_machine" match="none"/>
@@ -413,7 +476,7 @@
                 <space />
                 <reference ref="payment_card" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="11 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -423,8 +486,10 @@
                 <reference ref="model_prisma5" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
+
+            <separator/>
 
             <item name="12 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
@@ -433,7 +498,7 @@
                 <reference ref="model_prisma5" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="12 - Siemens Prisma 6" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -443,8 +508,10 @@
                 <reference ref="model_prisma6" />
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
+
+           <separator/>
 
             <item name="13 - Parkeon Stelio" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
@@ -454,7 +521,7 @@
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="13 - ATB PSA 1256" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -470,7 +537,7 @@
                 <key key="currency:others"  value="no" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
             <item name="13 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -481,9 +548,36 @@
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
-                <reference ref="noref_vending" />
+                <reference ref="other" />
             </item>
 
         </group>
+
+        <group name="Gödöllő" icon="presets/vehicle/parking/parking.svg" sort_values="false">
+
+            <item name="Parkeon Stelio" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_godollo" />
+                <reference ref="model_stelio" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="other" />
+            </item>
+
+            <item name="Parkeon Strada Transfer" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_godollo" />
+                <reference ref="model_strada_transfer" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="other" />
+            </item>
+
+        </group>
+
+
     </group>
 </presets>
+	
