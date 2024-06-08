@@ -74,7 +74,7 @@
             <key key="fire_hydrant:type" value="pillar" match="keyvalue" />
             <key key="manufacturer" value="Bohamet-Armatura Sp. z o.o." match="keyvalue!" />
             <key key="manufacturer:wikidata" value="Q124636220" match="none" />
-            <combo key="model" text="Model" values="DN80/1000 L1900 2B FIX PN10" />
+            <combo key="model" text="Model" values="DN80/1000 L1900 2B FIX PN10,DN80/1500 L2400 2B FIX PN10" />
             <text key="ref" text="Reference" />
             <reference ref="fire_hydrant_diameter" />
             <reference ref="fire_hydrant_position" />
@@ -87,7 +87,7 @@
             <key key="emergency" value="fire_hydrant" match="keyvalue" />
             <key key="fire_hydrant:type" value="pillar" match="keyvalue" />
             <key key="manufacturer" value="Jafar S.A." match="keyvalue!" />
-            <combo key="model" text="Model" values="8855 RD1250;8855 RD1500" />
+            <combo key="model" text="Model" values="8855 RD1250,8855 RD1500" />
             <text key="ref" text="Reference" />
             <reference ref="fire_hydrant_diameter" />
             <reference ref="fire_hydrant_position" />

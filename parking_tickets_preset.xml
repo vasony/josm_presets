@@ -22,10 +22,16 @@
 
     <chunk id="brand_bp02">
         <key key="brand"   value="Budapest II. kerület parkolás" match="keyvalue!" />
+        <key key="contact:email"   value="parkolas@masodikkerulet.hu"                 match="none" />
+        <key key="contact:phone"   value="+36 1 346 5599"                             match="none" />
+        <key key="operator"        value="Budapest Főváros II. Kerületi Önkormányzat" match="none" />
     </chunk>
 
     <chunk id="brand_bp03">
         <key key="brand"   value="Óbudai parkolás" match="keyvalue!" />
+        <key key="contact:email"   value="ugyfelszolgalat@obudaiparkolas.hu" match="none" />
+        <key key="contact:phone"   value="+36 21 208 8002"                   match="none" />
+        <key key="operator"        value="Óbudai Parkolási Nonprofit Kft."   match="none" />
     </chunk>
 
     <chunk id="brand_bp05">
@@ -41,7 +47,11 @@
     </chunk>
 
     <chunk id="brand_bp08">
-        <key key="brand"   value="Józsefváros parkolás" match="keyvalue!" />
+        <key key="brand"   	   value="Józsefváros parkolás" match="keyvalue!" />
+        <key key="contact:email"   value="parkolas@jgk.hu"                        match="none" />
+        <key key="contact:phone"   value="+36 1 299 7000"                         match="none" />
+        <key key="contact:website" value="https://www.jgk.hu/"                    match="none" />
+        <key key="operator"        value="Józsefvárosi Gazdálkodási Központ Zrt." match="none" />
     </chunk>
 
     <chunk id="brand_bp09">
@@ -81,14 +91,16 @@
     <chunk id="noref_vending">
         <check key="noref:HU:vending_reg" text="No NAV U" disable_off="true" />
         <combo key="note" text="Note" values="nincs kiírva az automata regisztrációs száma" />
+        <text  key="fixme" text="Fixme" />
     </chunk>
 
     <chunk id="parking_refs">
             <text key="ref" text="Parking Zone" />
             <text key="ref:internal" text="Reference number" />
             <text key="branch" text="Branch" />
-            <text key="branch:vending_reg" text="NAV Branch" />
             <text key="ref:HU:vending_reg" text="NAV U" />
+            <space />
+            <text key="branch:vending_reg" text="NAV Branch" />
     </chunk>
 
     <chunk id="model_dg4">
@@ -220,8 +232,9 @@
             <reference ref="parking_refs" />
             <combo key="brand"   text="Brand"    values="Budavár parkolás,Budapest II. kerület parkolás,Óbudai parkolás,Belváros-Lipótváros parkolás,Terézváros parkolás,Erzsébet parkolás,Józsefváros parkolás,Ferencvárosi parkolás,Kőbánya parkolás,Újbuda parkolás,Hegyvidéki parkolás,Budapest XIII. kerület parkolás,Zuglói parkolás" match="keyvalue"/>
             <combo key="model"   text="Model" sort_values="false">
-                <list_entry value="Prisma 5"       short_description="Prisma 5" />
-                <list_entry value="Prisma 6"       short_description="Prisma 6" />
+                <list_entry value="Prisma 5"       short_description="Siemens Prisma 5" />
+                <list_entry value="Prisma 6"       short_description="Siemens Prisma 6" />
+                <list_entry value="Sicuro        " short_description="Siemens Sicuro" />
                 <list_entry value="NortPark Solar" short_description="Budapest XI. - NortPark Solar" />
                 <list_entry value="PSA 1256"       short_description="Budapest XIII. - Piros - ATB PSA 1256" />
                 <list_entry value="Stelio"         short_description="Budapest XIII. - Szürke - Parkeon Stelio" />
@@ -258,6 +271,17 @@
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp02" />
                 <reference ref="model_prisma5" />
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+
+            <item name="02 - Siemens Prisma 6" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp02" />
+                <reference ref="model_prisma6" />
                 <reference ref="parking_refs" />
                 <space />
                 <reference ref="noref_vending" />
@@ -351,6 +375,17 @@
                 <key key="vending" value="parking_tickets" match="none" />
                 <reference ref="brand_bp08" />
                 <reference ref="model_sicuro" />
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <reference ref="parking_refs" />
+                <space />
+                <reference ref="noref_vending" />
+            </item>
+
+            <item name="08 - Siemens Prisma 5" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_bp08" />
+                <reference ref="model_prisma5" />
                 <key key="payment:electronic_purses"   value="yes" match="none"/>
                 <reference ref="parking_refs" />
                 <space />
