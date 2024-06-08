@@ -572,6 +572,8 @@
                 <reference ref="model_strada_transfer" />
                 <reference ref="parking_refs" />
                 <space />
+                <reference ref="payment_card" />
+                <space />
                 <reference ref="other" />
             </item>
 
