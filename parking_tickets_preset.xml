@@ -254,7 +254,7 @@
                 <key key="opening_hours"   value="24/7" match="none"/>
                 <key key="payment:coins"   value="yes" match="none"/>
                 <key key="payment:others"   value="no" match="none"/>
-                <key key="electricity"      value="solar" mactch="none" />
+                <key key="electricity"      value="solar" match="none" />
     </chunk>
 
     <group name="Parking tickets" icon="presets/vehicle/parking/parking.svg" sort_values="false">
