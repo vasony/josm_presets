@@ -100,6 +100,22 @@
         <key key="operator"        value="VÜSZI Nonprofit Kft."              match="none"/>
     </chunk>
 
+    <chunk id="brand_szekesfehervar">
+        <key key="brand"   	   value="Székesfehérvár parkolás"           match="keyvalue!" />
+        <key key="contact:email"   value="parkolas@varosgondnoksag.hu" 	     match="none" />
+        <key key="contact:phone"   value="+36 22 513 481"                    match="none" />
+        <key key="contact:mobile"  value="+36 70 66 99 132"                  match="none" />
+        <key key="contact:website" value="https://www.varosgondnoksag.hu/"   match="none" />
+        <key key="operator"        value="Székesfehérvár Városgondnoksága Kft."  match="none"/>
+    </chunk>
+
+    <chunk id="brand_veszprem">
+        <key key="brand"   	   value="Veszprém parkolás"                 match="keyvalue!" />
+        <key key="contact:email"   value="parkolas@vkszrt.hu"       	     match="none" />
+        <key key="contact:phone"   value="+36 88 411 153"                    match="none" />
+        <key key="contact:website" value="https://www.vkszrt.hu/"            match="none" />
+        <key key="operator"        value="VKSZ Veszprémi Közüzemi Szolgáltató Kft."  match="none"/>
+    </chunk>
 
     <chunk id="other">
         <check key="noref:HU:vending_reg" text="No NAV U" disable_off="true" />
@@ -110,14 +126,19 @@
         <reference ref="keypad_mapper" />
     </chunk>
 
-    <chunk id="parking_refs">
-            <text key="ref" text="Parking Zone" />
+    <chunk id="parking_ref_internal">
             <text key="ref:internal" text="Reference number" />
             <text key="branch" text="Branch" />
             <text key="ref:HU:vending_reg" text="NAV U" />
             <space />
             <text key="branch:vending_reg" text="NAV Branch" />
     </chunk>
+
+    <chunk id="parking_refs">
+            <text key="ref" text="Parking Zone" />
+            <reference ref="parking_ref_internal" />
+    </chunk>
+
 
     <chunk id="model_dg4">
                 <key key="language:de"   value="yes"   match="none" />
@@ -147,7 +168,23 @@
                 <key key="opening_hours"   value="24/7" match="none"/>
                 <key key="payment:coins"   value="yes" match="none"/>
                 <key key="payment:others"  value="no" match="none"/>
-                <key key="shape"           value="square_prism" match="none"/>
+                <key key="shape"           value="square_prism" match="keyvalue!"/>
+    </chunk>
+
+    <chunk id="model_nortpark_triangle">
+                <check key="electricity"   value_on="solar" text="Solar" delete_if_empty="true" />
+                <key key="language:de"   value="yes"   match="none"/>
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none"/>
+                <key key="manufacturer"          value="Nort Kft." match="none"/>
+                <key key="manufacturer:wikidata" value="Q125000308" match="none"/>
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="NortPark Solar" match="keyvalue!"/>
+                <key key="model:wikidata"  value="Q124989565" match="none"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"  value="no" match="none"/>
+                <key key="shape"           value="triangular_prism" match="keyvalue!"/>
     </chunk>
 
     <chunk id="model_prisma5">
@@ -210,6 +247,20 @@
                 <key key="electricity"      value="solar" match="none"/>
     </chunk>
 
+    <chunk id="model_psa1256_t">
+                <key key="language:de"   value="yes"   match="none" />
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none" />
+                <key key="manufacturer"  value="Automatentechnik Baumann GmbH" match="none"/>
+                <key key="manufacturer:wikidata" value="Q124790063" match="none" />
+                <key key="material"         value="stainless_steel" match="none"/>
+                <key key="model"            value="PSA 1256 T" match="keyvalue!"/>
+                <key key="model:wikidata"   value="Q124790011" match="none"/>
+                <key key="opening_hours"    value="24/7" match="none"/>
+                <key key="payment:coins"    value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+    </chunk>
+
     <chunk id="model_sicuro">
                 <key key="language:de"   value="yes"   match="none" />
                 <key key="language:en"   value="yes"   match="none" />
@@ -262,7 +313,7 @@
             <key key="amenity" value="vending_machine" match="none" />
             <key key="vending" value="parking_tickets" match="keyvalue" />
             <reference ref="parking_refs" />
-            <combo key="brand"   text="Brand"    values="Budavár parkolás,Budapest II. kerület parkolás,Óbudai parkolás,Belváros-Lipótváros parkolás,Terézváros parkolás,Erzsébet parkolás,Józsefváros parkolás,Ferencvárosi parkolás,Kőbánya parkolás,Újbuda parkolás,Hegyvidéki parkolás,Budapest XIII. kerület parkolás,Zuglói parkolás,Gödőllő parkolás" match="keyvalue"/>
+            <combo key="brand"   text="Brand"    values="Budavár parkolás,Budapest II. kerület parkolás,Óbudai parkolás,Belváros-Lipótváros parkolás,Terézváros parkolás,Erzsébet parkolás,Józsefváros parkolás,Ferencvárosi parkolás,Kőbánya parkolás,Újbuda parkolás,Hegyvidéki parkolás,Budapest XIII. kerület parkolás,Zuglói parkolás,Gödőllő parkolás,Veszprém parkolás" match="keyvalue"/>
             <combo key="model"   text="Model" sort_values="false">
                 <list_entry value="Prisma 5"       short_description="Siemens Prisma 5" />
                 <list_entry value="Prisma 6"       short_description="Siemens Prisma 6" />
@@ -272,6 +323,8 @@
                 <list_entry value="Stelio"         short_description="Budapest XIII. - Szürke - Parkeon Stelio" />
                 <list_entry value="DG4"            short_description="Budapest Belváros - Régi kocka  - Schlumberger DG4 " />
                 <list_entry value="Strada Transfer" short_description="Gödöllő - Fekete - Parkeon Strada Transfer" />
+                <list_entry value="PSA 1256 ST"      short_description="Szeged - ATB PSA 1256 ST" />
+                <list_entry value="PSA 1256 T"       short_description="Veszprém - ATB PSA 1256 T" />
             </combo>
             <space />
             <reference ref="other" />
@@ -430,6 +483,7 @@
                 <space />
                 <reference ref="other" />
             </item>
+            <separator/>
 
             <item name="09 - Schlumberger DG4" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
@@ -577,6 +631,74 @@
                 <reference ref="other" />
             </item>
 
+        </group>
+
+
+        <group name="Veszprém" icon="presets/vehicle/parking/parking.svg" sort_values="false">
+
+            <item name="ATB PSA 1256 Touch" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_veszprem" />
+                <reference ref="model_psa1256_t" />
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <combo key="ref"    text="Parking Zone" values="8001,8002,8003,8004,8005" match="keyvalue"/>
+                <combo key="zone"   text="Zone"    	values="piros,zöld,sárga,kék"     match="none"/>
+                <text key="ref:serial_number" text="Serial number" />
+                <space />
+                <reference ref="parking_ref_internal" />
+                <space />
+                <reference ref="other" />
+            </item>
+        </group>
+
+
+        <group name="Székesfehérvár" icon="presets/vehicle/parking/parking.svg" sort_values="false">
+            <item name="NortPark Solar - Square" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <link wiki="Tag:amenity=vending_machine" />
+                <key key="amenity" value="vending_machine" match="none"/>
+                <key key="vending" value="parking_tickets" match="none"/>
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <reference ref="brand_szekesfehervar" />
+                <reference ref="model_nortpark_solar" />
+                <combo key="ref"    text="Parking Zone" values="8010,8011,8012,8013" match="keyvalue"/>
+                <reference ref="parking_ref_internal" />
+                <space />
+                <reference ref="other" />
+            </item>
+
+            <item name="NortPark Solar - Triangle" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <link wiki="Tag:amenity=vending_machine" />
+                <key key="amenity" value="vending_machine" match="none"/>
+                <key key="vending" value="parking_tickets" match="none"/>
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <reference ref="brand_szekesfehervar" />
+                <reference ref="model_nortpark_triangle" />
+                <combo key="ref"    text="Parking Zone" values="8010,8011,8012,8013" match="keyvalue"/>
+                <reference ref="parking_ref_internal" />
+                <space />
+                <reference ref="other" />
+            </item>
+
+        </group>
+
+
+        <group name="Veszprém" icon="presets/vehicle/parking/parking.svg" sort_values="false">
+
+            <item name="ATB PSA 1256 Solar Touch" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_veszprem" />
+                <reference ref="model_psa1256_st" />
+                <key key="payment:electronic_purses"   value="yes" match="none"/>
+                <combo key="ref"    text="Parking Zone" values="8001,8002,8003,8004,8005" match="keyvalue"/>
+                <combo key="zone"   text="Zone"    	values="piros,zöld,sárga,kék"     match="none"/>
+                <text key="ref:serial_number" text="Serial number" />
+                <space />
+                <reference ref="parking_ref_internal" />
+                <space />
+                <reference ref="other" />
+            </item>
         </group>
 
 
