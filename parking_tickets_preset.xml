@@ -117,6 +117,16 @@
         <key key="operator"        value="VKSZ Veszprémi Közüzemi Szolgáltató Kft."  match="none"/>
     </chunk>
 
+    <chunk id="brand_tihany">
+        <key key="brand"   	   value="Tihany parkolás"                   match="keyvalue!" />
+        <key key="contact:email"   value="tihany.parkolas@gmail.com"   	     match="none" />
+        <key key="contact:phone"   value="+36 30 443 0163"                   match="none" />
+        <key key="contact:website" value="https://tihany.hu/hu/parkolas"     match="none" />
+        <key key="operator"        value="Congeria Kft."                     match="none"/>
+        <key key="operator:addr"   value="8237 Tihany, Major utca 65."       match="none"/>
+    </chunk>
+
+
     <chunk id="other">
         <check key="noref:HU:vending_reg" text="No NAV U" disable_off="true" />
         <combo key="note" text="Note" values="nincs kiírva az automata regisztrációs száma" />
@@ -126,12 +136,16 @@
         <reference ref="keypad_mapper" />
     </chunk>
 
-    <chunk id="parking_ref_internal">
-            <text key="ref:internal" text="Reference number" />
+    <chunk id="parking_ref_nav">
             <text key="branch" text="Branch" />
             <text key="ref:HU:vending_reg" text="NAV U" />
             <space />
             <text key="branch:vending_reg" text="NAV Branch" />
+    </chunk>
+
+    <chunk id="parking_ref_internal">
+            <text key="ref:internal" text="Reference number" />
+            <reference ref="parking_ref_nav" />
     </chunk>
 
     <chunk id="parking_refs">
@@ -307,6 +321,21 @@
                 <key key="payment:others"   value="no" match="none"/>
                 <key key="electricity"      value="solar" match="none" />
     </chunk>
+
+
+    <chunk id="model_citea">
+                <key key="electricity"   value="solar" match="none"/>
+                <key key="language:de"   value="yes"   match="none" />
+                <key key="language:en"   value="yes"   match="none" />
+                <key key="language:hu"   value="yes"   match="none" />
+                <key key="manufacturer"          value="Hectronic" match="none"/>
+                <key key="material"        value="stainless_steel" match="none"/>
+                <key key="model"           value="Citea"        match="keyvalue!"/>
+                <key key="opening_hours"   value="24/7" match="none"/>
+                <key key="payment:coins"   value="yes" match="none"/>
+                <key key="payment:others"   value="no" match="none"/>
+    </chunk>
+
 
     <group name="Parking tickets" icon="presets/vehicle/parking/parking.svg" sort_values="false">
         <item name="AGeneral" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
@@ -682,9 +711,24 @@
 
         </group>
 
+        <group name="Tihany" icon="presets/vehicle/parking/parking.svg" sort_values="false">
+            <item name="Citea" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
+                <key key="amenity" value="vending_machine" match="none" />
+                <key key="vending" value="parking_tickets" match="none" />
+                <reference ref="brand_tihany" />
+                <reference ref="model_citea" />
+                <combo key="ref"    text="Parking Zone" values="8231,8232,8234,8235,8236,8239,8240,8241" match="keyvalue"/>
+                <text key="ref:serial_number" text="Serial number" />
+                <space />
+                <reference ref="parking_ref_nav" />
+                <space />
+                <reference ref="payment_card" />
+                <space />
+                <reference ref="other" />
+            </item>
+        </group>
 
         <group name="Veszprém" icon="presets/vehicle/parking/parking.svg" sort_values="false">
-
             <item name="ATB PSA 1256 Solar Touch" icon="presets/transport/ticket-machine.svg" type="node" preset_name_label="true">
                 <key key="amenity" value="vending_machine" match="none" />
                 <key key="vending" value="parking_tickets" match="none" />
